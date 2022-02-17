@@ -25,11 +25,13 @@ const createCard = (pokemon) => {
             <ul class="list_types">
                 ${tipos}
             </ul>
-            <span class="disabled">
-            <h4>Stats</h4>
-            ${pokemon.stats.map(stat =>{
-                return `<span><strong>${stat.stat.name}</strong>: ${stat.base_stat}, </span>`
-            })}</span>
+            <div class="info disabled" >
+                <span class="detalhes ${tipo_base}">Peso: ${pokemon.weight}</span>
+                <span class="detalhes ${tipo_base}">Altura: ${pokemon.height}</span>
+                <span class="detalhes ${tipo_base}">Habilidades: ${pokemon.abilities.map(ability =>{
+                    return `${ability.ability.name}`
+                })}</span>
+            </div>
         </div>
     `;
 }
